@@ -9,7 +9,9 @@ import { verifyToken } from './../utility/verify-token';
 export const registerMiddlewares = (app: Application) => {
     app.use(helmet());
     app.use(json());
+    
     //app.use(verifyToken(['/user/login']));
+
 
     for (let route of routes) {
         app.use(route.path, route.router)
