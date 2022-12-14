@@ -5,8 +5,9 @@ import { registerMiddlewares } from './routes/routes';
 export const startServer = async () => {
     try {
         const app = express();
-
+        console.log(">")
         await connectToPostgres();
+        console.log("1")
         registerMiddlewares(app);
 
         const { PORT } = process.env;

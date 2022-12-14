@@ -9,9 +9,10 @@ const postgres = new Sequelize(
     port: 5432,
     dialect: 'postgres'
 });
-
+// console.log("db")
 export const connectToPostgres = async () => {
     try {
+        console.log("db")
         await postgres.authenticate();
         console.log('POSTGRES CONNECTED SUCCESSFULLY');
 

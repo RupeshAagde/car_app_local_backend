@@ -5,7 +5,7 @@ import { IPatient } from "./patients.types";
 
 const router = Router();
 
-router.post("/", async (req, res, next) => {
+router.post("/details", async (req, res, next) => {
     try {
         const patient = req.body as IPatient;
         console.log(patient)
@@ -18,6 +18,7 @@ router.post("/", async (req, res, next) => {
 
 router.get("/:pageNumber/:pageSize", async (req, res, next) => {
     try {
+        console.log("patient routes")
         const pagination = req.params;
 
         let pageNumber = parseInt(pagination.pageNumber);
