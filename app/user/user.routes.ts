@@ -5,7 +5,7 @@ import { IUser,ICredential } from "./user.types";
 
 const router = Router();
 
-router.post("/", async (req, res, next) => {
+router.post("/create", async (req, res, next) => {
     try {
         const user = req.body as IUser;
         const result = await userService.create(user);
