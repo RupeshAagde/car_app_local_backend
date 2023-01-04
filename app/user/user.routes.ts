@@ -1,7 +1,7 @@
-import { Router } from "express";
+import { Router } from "express";;
 import { ResponseHandler } from "../utility/response-handler";
 import userService from "./user.service";
-import { IUser } from "./user.types";
+import { IUser,ICredential } from "./user.types";
 
 const router = Router();
 
@@ -9,6 +9,18 @@ router.post("/", async (req, res, next) => {
     try {
         const user = req.body as IUser;
         const result = await userService.create(user);
+        console.log(result)
+
+        res.send(new ResponseHandler(result));
+    } catch (e) {
+        next(e);
+    }
+})
+router.post("/login", async (req, res, next) => {
+    try {
+        const userCredential = req.body as ICredential;
+        const result = await userService.login(userCredential);
+        console.log(result,"success")
         console.log(result)
 
         res.send(new ResponseHandler(result));

@@ -10,3 +10,8 @@ export interface IPagination {
     pageNumber: number;
     pageSize: number;
 }
+
+export interface ICredential {
+    email: string;
+    password: string;
+}

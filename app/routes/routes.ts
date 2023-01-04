@@ -10,7 +10,7 @@ export const registerMiddlewares = (app: Application) => {
     app.use(helmet());
     app.use(json());
     
-    //app.use(verifyToken(['/user/login']));
+    app.use(verifyToken(['/user/login']));
 
 
     for (let route of routes) {

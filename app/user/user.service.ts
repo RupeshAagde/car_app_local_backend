@@ -1,11 +1,19 @@
 import userRepo from "./user.repo";
-import { IPagination, IUser } from "./user.types";
+import { ICredential, IPagination, IUser } from "./user.types";
 
 const create = async (patient: IUser) => {
     try {
-        console.log("user service")
-        await userRepo.create(patient);
+        return await userRepo.create(patient);
     } catch (error) {
+        throw error
+    }
+   
+}
+
+const login = async (userCredential : ICredential) =>{
+    try{
+        return await userRepo.login(userCredential)
+    }catch (error) {
         throw error
     }
    
@@ -18,5 +26,6 @@ const getAllPatient = () => userRepo.getAllPatient();
 export default {
     create,
     getAllPatient,
-    updateUser
+    updateUser,
+    login
 }
