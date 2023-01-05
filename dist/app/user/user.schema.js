@@ -13,7 +13,7 @@ users.init({
         primaryKey: true,
         autoIncrement: true
     },
-    username: {
+    name: {
         type: sequelize_1.DataTypes.STRING,
         allowNull: false
     },

@@ -3,7 +3,7 @@ import postgres from "../connections/postgres.connection";
 
 class users extends Model{
     id!: number;
-    username!:string;
+    name!:string;
     email!:string;
     password !: string;
     role !: string;
@@ -14,7 +14,7 @@ users.init({
         primaryKey: true,
         autoIncrement: true
     },
-    username: {
+    name: {
         type: DataTypes.STRING,
         allowNull: false
     },

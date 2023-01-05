@@ -27,7 +27,7 @@ const login = async (userCredential : ICredential) => {
     }
     let payload = {
         id : findUser.id,
-        name : findUser.username,
+        name : findUser.name,
         role : findUser.role
     }
         const secretKey = process.env.SECRET_KEY as string;
