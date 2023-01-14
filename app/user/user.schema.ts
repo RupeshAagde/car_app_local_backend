@@ -7,6 +7,11 @@ class users extends Model{
     email!:string;
     password !: string;
     role !: string;
+    age !: number;
+    gender !: string;
+    blood_group !: string;
+    address !: string;
+    contact !: number;
 }
 users.init({
     id: {
@@ -28,6 +33,26 @@ users.init({
     },
     role: {
         type: DataTypes.STRING,
+        allowNull: true
+    },
+    age: {
+        type: DataTypes.INTEGER,
+        allowNull: true
+    },
+    gender: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    blood_group: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    address: {
+        type: DataTypes.STRING,
+        allowNull: true
+    },
+    contact: {
+        type: DataTypes.BIGINT,
         allowNull: true
     }
 },

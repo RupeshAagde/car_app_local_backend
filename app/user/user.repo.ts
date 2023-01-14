@@ -41,15 +41,18 @@ const login = async (userCredential : ICredential) => {
     //     throw error
     //  }
 
-const updateUser = async (userData: IUser, id: any) => {
-    let findUser = await user.findOne({ where: { id: id } })
+const updateUser = async (userData: IUser) => {
+    let findUser = await user.findOne({ where: { email: userData.email } })
     if (!findUser) {
         return `User Not Found`
     }
-    let updateUser = user.update(userData, { where: { id: id } })
+    let updateUser = await user.update(userData, { where: { email: userData.email } })
+
+    let getAllDetail = await user.findOne({ where: { email: userData.email } })
     // console.log(updateUser,">>updateUser updateUser")
     console.log(updateUser, "updateUser")
-    return updateUser
+    console.log(getAllDetail, "getAllDetail")
+    return getAllDetail
 }
 const getAllPatient = () => user.findAll(
     // offset: pagination.pageNumber * pagination.pageSize,

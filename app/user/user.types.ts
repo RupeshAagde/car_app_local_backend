@@ -3,7 +3,12 @@ export interface IUser {
     name: string;
     email: string;
     password: string;
-    role:string
+    role:string;
+    age : number;
+    gender : string;
+    blood_group : string;
+    address : string;
+    contact : number;
 }
 
 export interface IPagination {

@@ -29,14 +29,15 @@ router.post("/login", async (req, res, next) => {
     }
 })
 
-router.put("/:id", async (req, res, next) => {
+router.put("/update", async (req, res, next) => {
     try {        
         console.log("111>>id")
-        let id = req.params.id;
-        console.log(id,">>id")
+        // let email = req.params.email;
+        // console.log(id,">>id")
         const user = req.body as IUser;
-        const result = await userService.updateUser(user,id);
-        console.log(result)
+        const result = await userService.updateUser(user);
+
+        console.log(result,"result")
 
         res.send(new ResponseHandler(result));
     } catch (e) {
