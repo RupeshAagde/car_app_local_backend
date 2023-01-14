@@ -1,5 +1,5 @@
-import { config } from "dotenv";
-config();
+// import { config } from "dotenv";
+// config();
 
-import {startServer} from './app/app';
-startServer();
+// import {startServer} from './app/app';
+// startServer();
