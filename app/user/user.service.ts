@@ -18,8 +18,8 @@ const login = async (userCredential : ICredential) =>{
     }
    
 }
-const updateUser = (user:IUser) => {
-userRepo.updateUser(user)
+const updateUser = async(user:IUser) => {
+await userRepo.updateUser(user)
 }
 const getAllPatient = () => userRepo.getAllPatient();
 

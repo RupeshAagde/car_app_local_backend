@@ -1,3 +1,5 @@
+import { DateOnlyDataType } from "sequelize/types";
+
 export interface IUser {
     id: number;
     name: string;
@@ -9,6 +11,12 @@ export interface IUser {
     blood_group : string;
     address : string;
     contact : number;
+    specialisation : string;
+    experience : number;
+    appointment : DateOnlyDataType;
+    disease : string;
+    test_reports : string;
+    prescription : string; 
 }
 
 export interface IPagination {
