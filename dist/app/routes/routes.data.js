@@ -8,7 +8,7 @@ const routes_types_1 = require("./routes.types");
 const patients_routes_1 = __importDefault(require("../patients/patients.routes"));
 const doctors_routes_1 = __importDefault(require("../doctors/doctors.routes"));
 // import PatientRouter from '../patients/patients.routes'
-const user_routes_1 = __importDefault(require("../user/user.routes"));
+const user_routes_1 = __importDefault(require("../owner/owner.routes"));
 exports.routes = [
     new routes_types_1.Route("/user", user_routes_1.default),
     new routes_types_1.Route("/patient", patients_routes_1.default),
