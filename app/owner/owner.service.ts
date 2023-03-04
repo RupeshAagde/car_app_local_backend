@@ -19,8 +19,13 @@ const login = async (ownerCredential: ICredential) => {
 }
 
 const updateUser = async (ownerDetail: IOwner) => {
-    let updatedOwner = await ownerRepo.updateUser(ownerDetail)
-    return updatedOwner
+    try{
+        let updatedOwner = await ownerRepo.updateUser(ownerDetail)
+        return updatedOwner
+    }catch (error) {
+        throw error
+    }
+
 }
 
 const getAllOwner = () => ownerRepo.getAllOwner();

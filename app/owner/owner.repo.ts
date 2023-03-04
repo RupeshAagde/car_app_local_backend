@@ -34,16 +34,20 @@ const login = async (ownerCredential : ICredential) => {
         const token = jwt.sign(payload, secretKey);
         return {ownerDetail , token }
     }
-
+    
 const updateUser = async (ownerDetail: IOwner) => {
-    let findUser = await vehicle_detail.findOne({ where: { owner_email: ownerDetail.owner_email } })
-    if (!findUser) {
-        return `User Not Found`
-    }
-    let updateUser = await vehicle_detail.update(ownerDetail, { where: { owner_email: ownerDetail.owner_email } })
+    try{
+        let findUser = await vehicle_detail.findOne({ where: { owner_email: ownerDetail.owner_email } })
+        if (!findUser) {
+            throw ERROR_MESSAGES.USER_NOT_FOUND
+        }
+        let updateUser = await vehicle_detail.update(ownerDetail, { where: { owner_email: ownerDetail.owner_email } })
 
-    let getAllDetail = await vehicle_detail.findOne({ where: { owner_email: ownerDetail.owner_email } })
-    return getAllDetail
+        let getAllDetail = await vehicle_detail.findOne({ where: { owner_email: ownerDetail.owner_email } })
+        return getAllDetail
+    }   catch (error) {
+        throw error
+    }
 }
 const getAllOwner = () => vehicle_detail.findAll()
 
